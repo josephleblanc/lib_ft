@@ -1,8 +1,17 @@
 #ifndef LIBFT_H_
 #define LIBFT_H_
 
-void * ft_memalloc(size_t size);
-// void	ft_memdel(void **ap);
+#include <string.h>
+#include <stdlib.h>
+
+// Part 1
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+// Part 2
+void 	*ft_memalloc(size_t size);
+//void	ft_memdel(void **ap);
 // char * ft_strnew(size_t size);
 // void ft_strdel(char **as);
 // void ft_strclr(char *s);

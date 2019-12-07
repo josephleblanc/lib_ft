@@ -1,8 +1,12 @@
-NAME = lift.a
+NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I. -c
 
-SRC = ft_memalloc.c
+SRC = 	ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		\
+		ft_memalloc.c
 
 OBJ = $(SRC:%.c=%.o)
 
@@ -17,7 +21,10 @@ $(OBJ): $(SRC)
 clean: 
 	rm -f $(OBJ) 
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	rm -f $(NAME) libft.so
 
 re: fclean all
+
+so: $(OBJ)
+	gcc -shared -o libft.so $(OBJ)
